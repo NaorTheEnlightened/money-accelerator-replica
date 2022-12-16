@@ -5,4 +5,5 @@
 </template>
 
 <style>
+* {font-family: Mabry Pro,sans-serif;}
 </style>

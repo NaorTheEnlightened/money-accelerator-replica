@@ -1,8 +1,6 @@
 <template>
   <header class="header">
     <h1 class="logo"><a href="#">The Money Acceleretor</a></h1>
-    <ul class="main-nav">
-    </ul>
   </header>
 </template>
 

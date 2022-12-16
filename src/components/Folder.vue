@@ -1,6 +1,6 @@
 <template>
   <div class="folder-list-container">
-    <div  @click="isActive = !isActive">
+    <div  @click="isActive = !isActive" style="cursor: pointer">
       <img src="../assets/arrow.png" width="18" height="18" :class="{ 'active-arrow': isActive }">
       <img src="../assets/folder.png" width="18" height="18">
       <h3>{{ module.name }}</h3>

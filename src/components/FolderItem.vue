@@ -1,12 +1,14 @@
 <template>
   <div id="folder-item">
     <h4>{{ item.file_name }}</h4>
-    <h5>{{ item.extension }}</h5>
-    <h5>{{ formatBytes(item.file_size) }}</h5>
-    <h5>{{ formatSecondstoHHMMSS }}</h5>
+    <div>
+      <h5>{{ item.extension }}</h5>
+      <h5>{{ formatBytes(item.file_size) }}</h5>
+      <h5>{{ formatSecondstoHHMMSS }}</h5>
+      <a :href="itemUrl" target="_blank">{{ calcBtnTxt }}</a>
+      <a v-if="isPdfItem" :href="pdfReadUrl" target="_blank">Read</a>
+    </div>
 
-    <a :href="itemUrl" target="_blank">{{ calcBtnTxt }}</a>
-    <a v-if="isPdfItem" :href="pdfReadUrl" target="_blank">Read</a>
   </div>
 </template>
 
@@ -89,5 +91,8 @@ export default {
 <style scoped>
 a {
   cursor: pointer;
+}
+#folder-item {
+  margin-left: 3rem;
 }
 </style>
