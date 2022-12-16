@@ -3,10 +3,10 @@
     <div  @click="isActive = !isActive" style="cursor: pointer">
       <img src="../assets/arrow.png" width="18" height="18" :class="{ 'active-arrow': isActive }">
       <img src="../assets/folder.png" width="18" height="18">
-      <h3>{{ module.name }}</h3>
+      <h3>{{ this.index + '. ' + module.name }}</h3>
     </div>
     <div class="folder-list-items-container" v-show="isActive">
-      <folder-item v-for="item in module.children" :key="item.id" :item="item"></folder-item>
+      <folder-item v-for="(item, i) in module.children" :key="item.id" :item="item" :index="i + 1"></folder-item>
     </div>
   </div>
 </template>
@@ -20,6 +20,10 @@ export default {
       type: Object,
       default: () => {}
     },
+    index: {
+      type: Number,
+      default: 0
+    }
   },
   data() {
     return {

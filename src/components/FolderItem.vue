@@ -1,6 +1,6 @@
 <template>
   <div id="folder-item">
-    <h4>{{ item.file_name }}</h4>
+    <h4>{{ this.index + '. ' + item.file_name }}</h4>
     <div>
       <h5>{{ item.extension }}</h5>
       <h5>{{ formatBytes(item.file_size) }}</h5>
@@ -23,6 +23,10 @@ export default {
       default: () => {
       }
     },
+    index: {
+      type: Number,
+      default: 0
+    }
   },
   computed: {
     ...mapState({

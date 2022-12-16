@@ -2,14 +2,8 @@
   <div>
     <TheNavbar></TheNavbar>
     <section class="flex">
-      <div style="display:flex;flex-wrap: nowrap;">
-        <img src="../assets/atm-money-icon.png" alt="">
-        <img src="../assets/cash-hundred-dollar-bills.png" alt="">
-        <img src="../assets/wallet-icon.png" alt="">
-        <img src="../assets/cash.png" alt="">
-        <img src="../assets/credit-card.png" alt="">
-      </div>
-      <Folder v-for="module in courseData" :module="module" :key="module.id"></Folder>
+      <Pictures></Pictures>
+      <Folder v-for="(module, i) in courseData" :module="module" :key="module.id" :index="i + 1"></Folder>
     </section>
   </div>
 </template>
@@ -18,10 +12,11 @@
 import TheNavbar from "@/components/TheNavbar";
 import Folder from "@/components/Folder";
 import jsonData from '../courseData/data.json'
+import Pictures from "@/components/Pictures";
 
 export default {
   name: "Main",
-  components: {Folder, TheNavbar},
+  components: {Pictures, Folder, TheNavbar},
   data() {
     return {
       courseData: [...jsonData],
@@ -31,10 +26,6 @@ export default {
 </script>
 
 <style scoped>
-
-  img {
-    width: 192px;
-  }
 
   .flex {
     display: flex;
