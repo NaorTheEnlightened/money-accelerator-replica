@@ -164,6 +164,7 @@ img {
 @media (max-width: 769px) {
   #folder-item-information {
     height: 0;
+    margin-top: 0.75rem;
   }
 
 }
