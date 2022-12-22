@@ -1,6 +1,6 @@
 <template>
   <div class="folder-list-container">
-    <div  @click="isActive = !isActive" style="cursor: pointer">
+    <div  @click="isActive = !isActive" style="cursor: pointer; display: flex; align-items: center; height: 35px">
       <img src="../assets/arrow.png" width="18" height="18" :class="{ 'active-arrow': isActive }">
       <img src="../assets/folder.png" width="18" height="18">
       <h3>{{ this.index + '. ' + module.name }}</h3>
@@ -29,7 +29,14 @@ export default {
     return {
       isActive: false
     }
-  }
+  },
+  computed: {
+    image() {
+      // console.log(mo)
+      console.log(this.module.image)
+      return `${this.module.image}`;
+    }
+  },
 }
 </script>
 
@@ -41,11 +48,10 @@ export default {
     box-sizing: border-box;
     width: 100%;
     max-width: 1024px;
-    /*display: flex;*/
-    /*align-items: center;*/
     border: 1px solid black;
     border-radius: 6px;
-    padding: 4px;
+    padding: 0.75rem;
+    margin-top: 0.25rem;
   }
 
   .folder-list-items-container {
