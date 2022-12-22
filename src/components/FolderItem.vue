@@ -160,6 +160,15 @@ img {
   margin-left: 36px;
 }
 
+
+@media (max-width: 769px) {
+  #folder-item-information {
+    height: 0;
+  }
+
+}
+
+
 h4 {
   margin: 0;
   width: 70vw;
